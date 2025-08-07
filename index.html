@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineReserve - Book Your Movie</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #181c24;
+            color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(90deg, #ff3c6f 0%, #3a8dde 100%);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffe082;
+        }
+        .main-content {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .movie-listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .movie-card {
+            background: #23283a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+        }
+        .movie-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+        .movie-info {
+            padding: 1rem;
+        }
+        .movie-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .movie-desc {
+            font-size: 1rem;
+            color: #b0b3c7;
+            margin-bottom: 1rem;
+        }
+        .book-btn {
+            background: #ff3c6f;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .book-btn:hover {
+            background: #3a8dde;
+        }
+        .booking-section {
+            margin-top: 3rem;
+            background: #23283a;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .booking-section h2 {
+            margin-top: 0;
+        }
+        .booking-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .booking-form input, .booking-form select {
+            padding: 0.7rem;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .booking-form button {
+            background: #3a8dde;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .booking-form button:hover {
+            background: #ff3c6f;
+        }
+        @media (max-width: 700px) {
+            .main-content {
+                padding: 0 0.5rem;
+            }
+            .booking-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">CineReserve</div>
+        <nav>
+            <a href="#movies">Movies</a>
+            <a href="#booking">Book Now</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="main-content">
+        <section id="movies">
+            <h1>Now Showing</h1>
+            <div class="movie-listings">
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Movie 1">
+                    <div class="movie-info">
+                        <div class="movie-title">The Last Horizon</div>
+                        <div class="movie-desc">A breathtaking journey across the stars, where hope is the only fuel.</div>
+                        <button class="book-btn">Book</button>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1467987506553-8f3916508521?auto=format&fit=crop&w=400&q=80" alt="Movie 2">
+                    <div class="movie-info">
+                        <div class="movie-title">Mystic Falls</div>
+                        <div class="movie-desc">A mysterious adventure unfolds in the heart of an enchanted forest.</div>
+                        <button class="book-btn">Book</button>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=400&q=80" alt="Movie 3">
+                    <div class="movie-info">
+                        <div class="movie-title">Urban Pulse</div>
+                        <div class="movie-desc">A fast-paced drama set in the neon-lit streets of a futuristic city.</div>
+                        <button class="book-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="booking" class="booking-section">
+            <h2>Book Your Tickets</h2>
+            <form class="booking-form">
+                <input type="text" placeholder="Your Name" required>
+                <select required>
+                    <option value="">Select Movie</option>
+                    <option>The Last Horizon</option>
+                    <option>Mystic Falls</option>
+                    <option>Urban Pulse</option>
+                </select>
+                <input type="date" required>
+                <input type="number" min="1" max="10" placeholder="Tickets" required>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+    </div>
+    <footer style="text-align:center; padding:2rem 0; color:#b0b3c7;">
+        &copy; 2024 CineReserve. All rights reserved.
+    </footer>
+</body>
+</html>
